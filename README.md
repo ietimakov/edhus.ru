@@ -18,9 +18,15 @@ https://web.archive.org/web/20260509191822/https://edhus.ru/
 
 ## GitHub Pages
 
-Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save.
+Публикация включена 05.11.2026: Deploy from a branch → main → /(root). Custom domain: edhus.ru; файл CNAME добавлен GitHub.
 
-Сначала проверьте адрес https://ietimakov.github.io/edhus.ru/ . Затем в Settings → Pages задайте Custom domain: edhus.ru и внесите выданные GitHub DNS-записи у регистратора. Не меняйте MX/TXT почты. После проверки домена включите Enforce HTTPS. DNS пока не изменён, файл CNAME намеренно не добавлен до подключения домена.
+DNS перенесены с Бегета на ns1.reg.ru и ns2.reg.ru. В REG.RU сохранены:
+
+- A @: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153.
+- CNAME www: ietimakov.github.io.
+- Прежние MX mx1.beget.com (10), mx2.beget.com (20), TXT SPF и подтверждение Google.
+
+На момент настройки публичные DNS ещё возвращали старый IP 87.236.16.20; REG.RU указывает срок обновления до 24 часов. GitHub отдаёт новую страницу (HTTP 200, семь концертов) при обращении к его серверу с Host: edhus.ru. После обновления DNS и выпуска сертификата включите Enforce HTTPS в Settings → Pages. До этого HTTPS на собственном домене не подтверждён.
 
 ## Обновление афиши
 
